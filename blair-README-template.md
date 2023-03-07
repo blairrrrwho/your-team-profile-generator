@@ -1,7 +1,6 @@
 [![License:MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-# Your Team Profile Generator
-This is a node.js command-line application that takes in information about employees on a software engineering team and generates an HTML webpage that displays summaries for each person.
+# <Your-Project-Title>
 
 ## Description
 
