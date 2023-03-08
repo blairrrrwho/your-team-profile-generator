@@ -62,6 +62,12 @@ const addEmployee = () => {
         })
 }
 
+
+// Add function to generate html and write to file
+function generateMyTeam() {
+};
+
+
 // Initialize the application
 const init = async () => {
     await inquirer.prompt(questionsManager)
@@ -72,10 +78,6 @@ const init = async () => {
             console.log(genereatedTeamArray[0]);
             addEmployee();
         })
-};
-
-// Add function to generate html and write to file
-function generateMyTeam() {
 };
 
 init()
