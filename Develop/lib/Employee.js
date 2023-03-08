@@ -22,6 +22,7 @@ class Employee {
     }
 }
 
+// Exports the file
 module.exports = Employee;
 
 
