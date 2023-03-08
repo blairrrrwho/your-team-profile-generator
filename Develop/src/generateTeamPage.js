@@ -56,12 +56,23 @@ const generateTeamPage = (myTeam) => {
         `;
         html.push(internHtml);
     }
+
+    // Create loop for all employees
+    for (let i = 0; i < myTeam.length; i++) {
+        if (myTeam[i].getRole() === "Manager") {
+            generateManager(myTeam[i]);
+        }
+        if (myTeam[i].getRole() === "Engineer") {
+            generateEngineer(myTeam[i]);
+        }
+        if (myTeam[i].getRole() === "Intern") {
+            generateIntern(myTeam[i]);
+        }
+    }
+
+    // Join the HTML sections
+    return html.join('');
 }
-
-
-
-
-
 
 // Export function
 module.exports = myTeam => {
