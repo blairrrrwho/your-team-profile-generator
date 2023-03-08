@@ -41,8 +41,14 @@ Live URL: <a href="deployed link">Deployment Link</a>
 ![alt text](assets/images/screenshot.png)
 
 ## Screenshots
+Terminal Demo:  
+![Terminal Demo Screenshot](./Develop/assets/images/terminalScreenshot.png)  
+  
+HTML Generation Sample:  
+![HTML Generation Sample](./Develop/assets/images/htmlScreenshot.png)  
 
 ## Technologies
+JavaScript, Node.js, Inquirer, Jest, HTML, CSS
 
 ## License
 [![License:MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  
