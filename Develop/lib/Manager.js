@@ -1,4 +1,4 @@
-// This class will extend Employee; add officeNumber to Manager
+// This class will extend Employee; add officeNumber as a new parameter to Manager
 const Employee = require('./Employee');
 
 class Manager extends Employee {

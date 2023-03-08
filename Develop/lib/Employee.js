@@ -30,3 +30,6 @@ module.exports = Employee;
 //                  id: 4,
 //                  email: "blair@gmail.com"
 //          }
+
+// Employee is the parent and the other three extend as the children of Employee
+// So Manager, for example, takes from the Employee class, and so on
