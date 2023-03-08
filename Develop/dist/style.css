@@ -1,29 +1,30 @@
 header {
     color: white;
-    background-color: rgb(176, 42, 42);
-    margin: 7px;
-    padding: 11px;
+    background-color: rgba(4, 4, 49, 0.842);
+    margin: 0.25%;
+    padding: 2%;
     display: flex;
     justify-content: center;
     font-size: 2em;
+    border-radius: 5px;
 
 }
-
+body {
+    background-color: rgb(231, 225, 218);
+}
 main{
-    margin: 7px;
-    padding: 11px;
+    margin: 2%;
     display: flex;
     flex-wrap: wrap;
 }
 
 .card {
-    margin: 7px;
-    padding: 11px;
+    margin: 2%;
 }
 
 .card-header {
-    color: white;
-    background-color: rgba(19, 19, 134, 0.925);
+    color: rgb(17, 87, 84);
+    background-color: rgba(219, 166, 53, 0.808);
 
 }
 

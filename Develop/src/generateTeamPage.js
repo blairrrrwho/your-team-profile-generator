@@ -93,7 +93,7 @@ module.exports = myTeam => {
         <h1>My Team</h1>
     </header>
     <main>
-        // ${generateTeamPage(myTeam)} 
+        ${generateTeamPage(myTeam)} 
     </main>
 </body>
 </html>
