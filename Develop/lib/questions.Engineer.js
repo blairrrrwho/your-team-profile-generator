@@ -1,9 +1,9 @@
 const inquirer = require('inquirer')
 
-const questionsEngineer = [
+const questionsEngineer = () => inquirer.prompt([
     {
         type: 'input',
-        message: 'What is the name of your team\'s engineer? (Required)',
+        message: 'What is the name of your team\'s engineer?',
         name: 'name',
         validate: nameInput => {
             if (nameInput) {
@@ -16,7 +16,7 @@ const questionsEngineer = [
     },
     {
         type: 'input',
-        message: 'What is your engineer\'s employee ID? (Required)',
+        message: 'What is your engineer\'s employee ID?',
         name: 'id',
         validate: id => {
             if (id) {
@@ -29,7 +29,7 @@ const questionsEngineer = [
     },
     {
         type: 'input',
-        message: 'What is your engineer\'s email address? (Required)',
+        message: 'What is your engineer\'s email address?',
         name: 'email',
         validate: email => {
             if (email) {
@@ -45,7 +45,7 @@ const questionsEngineer = [
         message: 'What is your engineer\'s GitHub username?',
         name: 'gitHubUsername',
     },
-];
+]);
 
 // Exports the file
 module.exports = questionsEngineer

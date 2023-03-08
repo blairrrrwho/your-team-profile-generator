@@ -1,9 +1,9 @@
 const inquirer = require('inquirer');
 
-const questionsManager = [
+const questionsManager = () => inquirer.prompt([
     {
         type: 'input',
-        message: 'What is the name of your team\'s manager? (Required)',
+        message: 'What is the name of your team\'s manager?',
         name: 'name',
         validate: name => {
             if (name) {
@@ -16,7 +16,7 @@ const questionsManager = [
     },
     {
         type: 'input',
-        message: 'What is your manager\'s employee ID? (Required)',
+        message: 'What is your manager\'s employee ID?',
         name: 'id',
         validate: id => {
             if (id) {
@@ -29,7 +29,7 @@ const questionsManager = [
     },
     {
         type: 'input',
-        message: 'What is your manager\'s email address? (Required)',
+        message: 'What is your manager\'s email address?',
         name: 'email',
         validate: email => {
             if (email) {
@@ -45,7 +45,7 @@ const questionsManager = [
         message: 'What is your manager\'s office number?',
         name: 'officeNumber',
     },
-];
+]);
 
 // Exports the file
 module.exports = questionsManager

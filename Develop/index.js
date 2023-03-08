@@ -4,8 +4,6 @@ const fs = require('fs');
 const path = require("path");
 const OUTPUT_DIR = path.resolve(__dirname, 'outputPath')
 const outputPath = path.join(OUTPUT_DIR, 'myTeam.html');
-
-// Import lib.js files
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
@@ -19,64 +17,109 @@ const generateTeamPage = require('./src/generateTeamPage')
 const genereatedTeamArray = [];
 
 
-// New team member question prompt
+// Welcome prompt before question prompts
+const welcomePrompt = async () => {
+    welcome = await inquirer.prompt([
+        {
+            type: 'confirm',
+            name: 'welcome',
+            message: 'Welcome to Your Team Profile Generator! Whenever you are ready to input your team members\'s information, select yes to continue,',
+        }
+    ])
+    if (welcome) {
+        teamMemObj = await questionsManager();
+        const manager = new Manager(teamMemObj);
+        genereatedTeamArray.push(manager);
+        if (teamMemObj.addAnother) {
+            return prompts();
+        } else {
+            finishedTeam();
+        };
+    }
+}
+
+// Add new team member prompt
 const newEmployeePrompt = [
     {
         type: 'list',
-        message: 'What\'s the role of the employee you want to add to your team?',
+        message: 'Which employee role would you like to add to your team?',
         name: 'role',
         choices: ['Manager', 'Engineer', 'Intern', 'My team is complete!']
-    }]
+    }
+];
 
-// Initialize the application
-const init = async () => {
-    await inquirer.prompt(questionsManager)
-        .then((answers) => {
-            const answersManager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber);
-            genereatedTeamArray.push(answersManager);
-            console.log(answersManager);
-            console.log(genereatedTeamArray[0]);
-            addEmployee();
-        })
-};
+//placeholder function to test current function outputs. 
+// const finishedTeam = () => generateTeamPage(genereatedTeamArray);
 
-const addEmployee = () => {
-    inquirer.prompt(newEmployeePrompt)
-        .then((answer) => {
-            if ('My team is complete!') {
+// Functions to display the specific questions for each role
+const prompts = async () => {
+    let teamMemObj = {};
+    const employee = await inquirer.prompt(newEmployeePrompt);
+
+    switch (employee.newEmployeePrompt) {
+        case 'Engineer':
+            teamMemObj = await questionsEngineer();
+            const engineer = new Engineer(teamMemObj);
+            genereatedTeamArray.push(engineer);
+            if (teamMemObj.addAnother) {
+                return prompts();
+            } else {
                 finishedTeam();
-                console.log(genereatedTeamArray);
-                console.log("My team is complete!");
-            } else if (answer.role === 'Manager') {
-                inquirer.prompt(questionsManager)
-                    .then((answers) => {
-                        const answersManager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber);
-                        genereatedTeamArray.push(answersManager);
-                        console.log(answersManager);
-                        console.log(genereatedTeamArray[0]);
-                        addEmployee();
-                    })
-            } else if (answer.role === 'Engineer') {
-                inquirer.prompt(questionsEngineer)
-                    .then((answers) => {
-                        const answersEngineer = new Engineer(answers.name, answers.id, answers.email, answers.gitHubUsername);
-                        genereatedTeamArray.push(answersEngineer);
-                        console.log(answersEngineer);
-                        console.log(genereatedTeamArray[1]);
-                        addEmployee();
-                    })
-            } else if (answer.role === 'Intern') {
-                inquirer.prompt(questionsIntern)
-                    .then((answers) => {
-                        const answersIntern = new Intern(answers.name, answers.id, answers.email, answers.school);
-                        genereatedTeamArray.push(answersIntern);
-                        console.log(answersIntern);
-                        console.log(genereatedTeamArray[2]);
-                        addEmployee();
-                    })
             }
-        })
+            break;
+
+        case 'Intern':
+            teamMemObj = await questionsIntern();
+            const intern = new Intern(teamMemObj);
+            genereatedTeamArray.push(intern);
+            if (teamMemObj.addAnother) {
+                return prompts();
+            } else {
+                finishedTeam();
+            }
+            break;
+        default:
+            console.log('you have reached the default switch statement. thant should not happen. Please try again!');
+    }
 }
+
+// const init = () => {
+//     await inquirer.prompt(questionsManager)
+//         .then((answers) => {
+//             const answersManager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber);
+//             genereatedTeamArray.push(answersManager);
+//             console.log(answersManager);
+//             addEmployee();
+//         })
+// };
+
+// Function to display questions for each type of employee
+// const addEmployee = () => {
+//     inquirer.prompt(newEmployeePrompt)
+//         .then((answer) => {
+//             if ('My team is complete!') {
+//                 finishedTeam();
+//                 console.log(genereatedTeamArray);
+//                 console.log("My team is complete!");
+//             } else if (answer.role === 'Engineer') {
+//                 inquirer.prompt(questionsEngineer)
+//                     .then((answers) => {
+//                         const answersEngineer = new Engineer(answers.name, answers.id, answers.email, answers.gitHubUsername);
+//                         genereatedTeamArray.push(answersEngineer);
+//                         console.log(answersEngineer);
+//                         init();
+//                     })
+//             } else if (answer.role === 'Intern') {
+//                 inquirer.prompt(questionsIntern)
+//                     .then((answers) => {
+//                         const answersIntern = new Intern(answers.name, answers.id, answers.email, answers.school);
+//                         genereatedTeamArray.push(answersIntern);
+//                         console.log(answersIntern);
+//                         addEmployee();
+//                     })
+//             }
+//         })
+// }
 
 
 // Add function to generate html and write to file
@@ -89,4 +132,4 @@ const finishedTeam = () => {
 }
 
 // Starts application
-init()
+welcomePrompt();
