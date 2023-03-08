@@ -1,3 +1,4 @@
+// This class will extend Employee; add officeNumber to Manager
 const Employee = require('./Employee');
 
 class Manager extends Employee{

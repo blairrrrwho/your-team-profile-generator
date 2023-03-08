@@ -1,21 +1,15 @@
-class Engineer {
-    constructor(name, id, email, officeNumber) {
-        this.name = name;
-        this.id= id;
-        this.email = email;
-        this.officeNumber = officeNumber;
+// This class will extend Employee; add github username to Engineer
+const Employee = require('./Employee');
+
+class Engineer extends Employee {
+    constructor(name, id, email, gitHubUsername) {
+        // Call parent constructor here
+        super (name, id, email);
+        this.gitHubUsername = gitHubUsername;
     }
 
-    getName() {
-        return this.name;
-    }
-
-    getId() {
-        return this.id
-    }
-
-    getEmail() {
-        return this.email
+    getGitHub() {
+        return this.gitHubUsername;
     }
 
     getRole() {
