@@ -45,6 +45,11 @@ const questionsEngineer = () => inquirer.prompt([
         message: 'What is your engineer\'s GitHub username?',
         name: 'gitHubUsername',
     },
+    {
+        type: 'confirm',
+        name: 'addAnother',
+        message: 'Would you like to add another employee?',
+    },
 ]);
 
 // Exports the file

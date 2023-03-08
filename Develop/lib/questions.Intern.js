@@ -1,6 +1,6 @@
 const inquirer = require('inquirer')
 
-const questionsIntern = () => inquirer.prompt ([
+const questionsIntern = () => inquirer.prompt([
     {
         type: 'input',
         message: 'What is the name of your team\'s intern?',
@@ -44,6 +44,11 @@ const questionsIntern = () => inquirer.prompt ([
         type: 'input',
         message: 'What school is your intern currently attending?',
         name: 'school',
+    },
+    {
+        type: 'confirm',
+        name: 'addAnother',
+        message: 'Would you like to add another employee?',
     },
 ]);
 

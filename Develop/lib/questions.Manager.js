@@ -45,6 +45,11 @@ const questionsManager = () => inquirer.prompt([
         message: 'What is your manager\'s office number?',
         name: 'officeNumber',
     },
+    {
+        type: 'confirm',
+        name: 'addAnother',
+        message: 'Would you like to add another employee?',
+    },
 ]);
 
 // Exports the file
