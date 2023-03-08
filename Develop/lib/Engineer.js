@@ -1,4 +1,4 @@
-// This class will extend Employee; add github username to Engineer
+// This class will extend Employee; add gitHubUsername to Engineer
 const Employee = require('./Employee');
 
 class Engineer extends Employee {
