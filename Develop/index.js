@@ -1,8 +1,9 @@
 // Set dependencies for index.js
 const inquirer = require('inquirer');
 const fs = require('fs');
-// const fs = require("fs");
-// const path = require("path");
+const path = require("path");
+const OUTPUT_DIR = path.resolve(__dirname, 'outputPath')
+const outputPath = path.join(OUTPUT_DIR, 'myTeam.html');
 
 // Import lib.js files
 const Manager = require('./lib/Manager');
@@ -45,6 +46,7 @@ const addEmployee = () => {
             if ('My team is complete!') {
                 finishedTeam();
                 console.log(genereatedTeamArray);
+                console.log("My team is complete!");
             } else if (answer.role === 'Manager') {
                 inquirer.prompt(questionsManager)
                     .then((answers) => {
@@ -78,8 +80,13 @@ const addEmployee = () => {
 
 
 // Add function to generate html and write to file
-const finishedTeam = () => generateTeamPage(genereatedTeamArray);
-
+const finishedTeam = () => {
+    // Create the output directory if the output path doesn't exist
+    if (!fs.existsSync(OUTPUT_DIR)) {
+        fs.mkdirSync(OUTPUT_DIR)
+    }
+    fs.writeFileSync(outputPath, generateTeamPage(genereatedTeamArray), "utf-8");
+}
 
 // Starts application
 init()

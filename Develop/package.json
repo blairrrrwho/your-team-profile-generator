@@ -25,7 +25,9 @@
     "url": "https://github.com/blairrrrwho/your-team-profile-generator/issues"
   },
   "dependencies": {
-    "inquirer": "^8.2.4"
-  },  
+    "inquirer": "^8.2.4",
+    "nodemon": "^2.0.21",
+    "path": "^0.12.7"
+  },
   "homepage": "https://github.com/blairrrrwho/your-team-profile-generator#readme"
 }
