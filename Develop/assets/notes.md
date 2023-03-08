@@ -1,9 +1,5 @@
 todo: 
 - add styling: 
-    - media queries
-    - colors
-    - font size
-    - center cards and card titles
 - cancel the node index command when you choose no in the initial welcome prompt
 
 

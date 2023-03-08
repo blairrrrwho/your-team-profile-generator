@@ -8,8 +8,8 @@ const generateTeamPage = (myTeam) => {
         const managerHtml = ` 
         <div class="card" style="width: 18rem;">
             <div class="card-header">
-                ${manager.name} <br>
-                <i class="fas fa-mug-hot"></i>Manager
+                <h3>${manager.name}<br></h3>
+                <h5><i class="fas fa-mug-hot"></i>Manager</h5>
             </div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">ID: ${manager.id}</li>
@@ -26,8 +26,8 @@ const generateTeamPage = (myTeam) => {
         const engineerHtml = ` 
         <div class="card" style="width: 18rem;">
             <div class="card-header">
-                ${engineer.name} <br>
-                <i class="fas fa-glasses"></i>Engineer
+                <h3>${engineer.name} <br></h3>
+                <h5><i class="fas fa-glasses"></i>Engineer</h5>
             </div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">ID: ${engineer.id}</li>
@@ -44,8 +44,8 @@ const generateTeamPage = (myTeam) => {
         const internHtml = ` 
         <div class="card" style="width: 18rem;">
             <div class="card-header">
-                ${intern.name} <br>
-                <i class="fas fa-user-graduate"></i>Intern
+                <h3>${intern.name} <br></h3>
+                <h5><i class="fas fa-user-graduate"></i>Intern</h5> 
             </div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">ID: ${intern.id}</li>
