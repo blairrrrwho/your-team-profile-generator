@@ -49,9 +49,6 @@ const addEmployee = [
     }
 ];
 
-//placeholder function to test current function outputs. 
-// const finishedTeam = () => generateTeamPage(genereatedTeamArray);
-
 // Functions to display the specific questions for each role
 const prompts = async () => {
     let teamMemObj = {};
@@ -81,47 +78,8 @@ const prompts = async () => {
             break;
         default:
             finishedTeam();
-        }
+    }
 }
-
-// const init = () => {
-//     await inquirer.prompt(questionsManager)
-//         .then((answers) => {
-//             const answersManager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber);
-//             genereatedTeamArray.push(answersManager);
-//             console.log(answersManager);
-//             addEmployee();
-//         })
-// };
-
-// Function to display questions for each type of employee
-// const addEmployee = () => {
-//     inquirer.prompt(newEmployeePrompt)
-//         .then((answer) => {
-//             if ('My team is complete!') {
-//                 finishedTeam();
-//                 console.log(genereatedTeamArray);
-//                 console.log("My team is complete!");
-//             } else if (answer.role === 'Engineer') {
-//                 inquirer.prompt(questionsEngineer)
-//                     .then((answers) => {
-//                         const answersEngineer = new Engineer(answers.name, answers.id, answers.email, answers.gitHubUsername);
-//                         genereatedTeamArray.push(answersEngineer);
-//                         console.log(answersEngineer);
-//                         init();
-//                     })
-//             } else if (answer.role === 'Intern') {
-//                 inquirer.prompt(questionsIntern)
-//                     .then((answers) => {
-//                         const answersIntern = new Intern(answers.name, answers.id, answers.email, answers.school);
-//                         genereatedTeamArray.push(answersIntern);
-//                         console.log(answersIntern);
-//                         addEmployee();
-//                     })
-//             }
-//         })
-// }
-
 
 // Add function to generate html and write to file
 const finishedTeam = () => {
