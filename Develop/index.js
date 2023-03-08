@@ -1,4 +1,4 @@
-// Set required npm's
+// Set dependencies for index.js
 const inquirer = require('inquirer');
 const fs = require('fs');
 // const fs = require("fs");
@@ -11,8 +11,10 @@ const Intern = require('./lib/Intern');
 const questionsManager = require('./lib/questions.Manager');
 const questionsEngineer = require('./lib/questions.Engineer');
 const questionsIntern = require('./lib/questions.Intern');
+const generateTeamPage = require('./src/generateTeamPage')
 
 // Array of team member's when team is complete
+// Global variables
 const genereatedTeamArray = [];
 
 
@@ -25,12 +27,24 @@ const newEmployeePrompt = [
         choices: ['Manager', 'Engineer', 'Intern', 'My team is complete!']
     }]
 
+// Initialize the application
+const init = async () => {
+    await inquirer.prompt(questionsManager)
+        .then((answers) => {
+            const answersManager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber);
+            genereatedTeamArray.push(answersManager);
+            console.log(answersManager);
+            console.log(genereatedTeamArray[0]);
+            addEmployee();
+        })
+};
+
 const addEmployee = () => {
     inquirer.prompt(newEmployeePrompt)
         .then((answer) => {
             if ('My team is complete!') {
+                finishedTeam();
                 console.log(genereatedTeamArray);
-                // console.log(------generate html function----------);
             } else if (answer.role === 'Manager') {
                 inquirer.prompt(questionsManager)
                     .then((answers) => {
@@ -64,21 +78,8 @@ const addEmployee = () => {
 
 
 // Add function to generate html and write to file
-function generateMyTeam() {
-};
+const finishedTeam = () => generateTeamPage(genereatedTeamArray);
 
 
-// Initialize the application
-const init = async () => {
-    await inquirer.prompt(questionsManager)
-        .then((answers) => {
-            const answersManager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber);
-            genereatedTeamArray.push(answersManager);
-            console.log(answersManager);
-            console.log(genereatedTeamArray[0]);
-            addEmployee();
-        })
-};
-
+// Starts application
 init()
-

@@ -5,8 +5,8 @@ const questionsIntern = [
         type: 'input',
         message: 'What is the name of your team\'s intern? (Required)',
         name: 'name',
-        validate: nameInput => {
-            if (nameInput) {
+        validate: name => {
+            if (name) {
                 return true;
             } else {
                 console.log('Please enter the employee\'s name!');
