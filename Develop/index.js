@@ -40,11 +40,11 @@ const welcomePrompt = async () => {
 }
 
 // Add new team member prompt
-const newEmployeePrompt = [
+const addEmployee = [
     {
         type: 'list',
         message: 'Which employee role would you like to add to your team?',
-        name: 'role',
+        name: 'addEmployee',
         choices: ['Manager', 'Engineer', 'Intern', 'My team is complete!']
     }
 ];
@@ -55,9 +55,9 @@ const newEmployeePrompt = [
 // Functions to display the specific questions for each role
 const prompts = async () => {
     let teamMemObj = {};
-    const employee = await inquirer.prompt(newEmployeePrompt);
+    const employee = await inquirer.prompt(addEmployee);
 
-    switch (employee.newEmployeePrompt) {
+    switch (employee.addEmployee) {
         case 'Engineer':
             teamMemObj = await questionsEngineer();
             const engineer = new Engineer(teamMemObj);
@@ -80,8 +80,8 @@ const prompts = async () => {
             }
             break;
         default:
-            console.log('you have reached the default switch statement. thant should not happen. Please try again!');
-    }
+            finishedTeam();
+        }
 }
 
 // const init = () => {
