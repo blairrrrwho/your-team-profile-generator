@@ -16,27 +16,9 @@ test ('test to retrieve the id from the getId() method', () => {
 })
 
 test ('test to retrieve the email from the getEmail() method', () => {
-    expect(newEmployee.getEmail()).toBe('blair10324');
+    expect(newEmployee.getEmail()).toBe('blair10324@gmail.com');
 })
 
 test ('test to retrieve the role from the getRole() method', () => {
     expect(newEmployee.getRole()).toBe('Employee');
 });
-
-
-
-// getName() {
-//     return this.name;
-// }
-
-// getId() {
-//     return this.id
-// }
-
-// getEmail() {
-//     return this.email
-// }
-
-// getRole() {
-//     return "Employee"
-// }
