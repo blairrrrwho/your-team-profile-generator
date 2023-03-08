@@ -32,7 +32,7 @@ const generateTeamPage = (myTeam) => {
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">ID: ${engineer.id}</li>
                 <li class="list-group-item">Email: <span id="email"><a href="mailto:${engineer.email}">${engineer.email}</a></span></li>
-                <li class="list-group-item">Office Number: ${engineer.gitHubUsername}</li>
+                <li class="list-group-item">GitHub: <a target="_blank" href="https://github.com/${engineer.gitHubUsername}"> ${engineer.gitHubUsername}</a></li>
             </ul>
         </div>
         `;
@@ -50,7 +50,7 @@ const generateTeamPage = (myTeam) => {
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">ID: ${intern.id}</li>
                 <li class="list-group-item">Email: <span id="email"><a href="mailto:${intern.email}">${intern.email}</a></span></li>
-                <li class="list-group-item">Office Number: ${intern.school}</li>
+                <li class="list-group-item">School: ${intern.school}</li>
             </ul>
         </div>
         `;
