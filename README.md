@@ -13,29 +13,29 @@ This application does those things by using node.js, along with inquirer and jes
 - [Screenshots](#screenshots)
 - [Technologies](#technologies)
 - [License](#license)
-- [Contribution](#how-to-contribute)
 - [Tests](#tests)
-- [Contact Information](#contact-information)
+- [Contribution](#how-to-contribute)
+- [Contact / Questions](#contact--questions)
 
 ## Installation
 
-This application does have dependencies: inquirer and jest.  
-1. Make sure you have Node.js installed on your computer. Next, we will install the above mentioned packages using npm (node package manager). 
-2. First, using the CLI, run npm init to install a package.json and personalize your application. 
-3. To install inquirer, run the command: npm i inquirer@8.2.4 -- this applicaiton does require that specific version of inquirer. 
-4. To install jest, use the command: npm i jest. 
-5. If you want to use a gitignore to keep unnecessary data out of your GitHub repo, make sure your gitignore includes: node_modules; package-lock.json; .vscode; .DS_Store/; .history  
-6. Next, use the FullDemo.gif to run the application and generate your HTML file. -- The main takeaway here is to ensure you cd into the Develop folder using the command: cd Develop. If you try to run tests or the application through the root folder, it won't run properly. 
-7. To run tests --> command: npm run test
-8. To fire the application and genrate your team's HTML file, command: node index
-  
-Following these steps, you should be able to run the app smoothly and successfully!
+To install the application, do the following: 
+1. Clone down the repo
+2. Using the CLI, cd into the directory; further cd into the develop folder 
+3. Because this application has dependencies, such as inquirer and jest, in the terminal run the command: npm i  
+    - This will install all required package to run the application.  
+      
+Now that you've installed all of the necessary tools needed, you should be able to run the app smoothly and successfully!
 
-## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
+## Usage (Instructions / How To Use)
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative file path, add it to your README using the following syntax:
+Once required packages are installed successfully as listed above, make sure you're still in the develop folder and we will initialize the app from here.   
+In the terminal, run the command: node index 
+  - Contrats! You've launched the application!
+ 
+From here, it's pretty straightforward. Follow the prompts until you've made your way through them all and are satisfied with your team member additions.  
+The HTML file will automatically generate once you've completed the final prompt, and it will populate in the outputPath folder and be titled "myTeam.html."
 
 ## Demo
 <a href="https://vimeo.com/806066026">Link to Full Demo</a>
@@ -49,23 +49,29 @@ Terminal Demo:
 HTML Generation Sample:  
 ![HTML Generation Sample](./Develop/assets/images/htmlScreenshot.png)  
 
+
 ## Technologies
 JavaScript, Node.js, Inquirer, Jest, HTML, CSS
 
+
 ## License
-[![License:MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  
+[![License:MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 This project is licensed under the MIT license. For more information about this license and what it entails visit: https://opensource.org/licenses/MIT
 
-## How to Contribute
-
-Please email me if you'd like to contribute so we can discuss!
 
 ## Tests
 
 The following test conditions are active:  
 Class Tests for Employee, Manager, Engineer, and Intern.
 
-## Contact Information
+
+## How to Contribute
+
+Please email me if you'd like to contribute so we can discuss!
+
+
+## Contact / Questions
   If you liked this project and want to see more, feel free to check out my 
   other repos [here](https://github.com/blairrrrwho).
   <br>
