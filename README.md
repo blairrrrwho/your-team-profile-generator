@@ -1,10 +1,11 @@
 [![License:MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-# Your Team Profile Generator
+# Your TeamProfile Generator
 
 ## Description
 This project is used for generating an HTML file that holds professional teams with their employer's information which is displayed as a cards. The acceptable user input allows you to identify the employee's postion, id number, email, as well as the office number for managers, the GitHub username linked to his/her profile for engineers, and the attending school for interns.  
 This application does those things by using node.js, along with inquirer and jest, to generate an HTML based on the informated taken in by the user. 
+
 
 ## Table of Contents
 - [Installation](#installation)
@@ -17,11 +18,12 @@ This application does those things by using node.js, along with inquirer and jes
 - [Contribution](#how-to-contribute)
 - [Contact / Questions](#contact--questions)
 
+
 ## Installation
 
 To install the application, do the following: 
 1. Clone down the repo
-2. Using the CLI, cd into the directory; further cd into the develop folder 
+2. Using the CLI, cd into the cloned repo's directory; further, cd into the develop folder 
 3. Because this application has dependencies, such as inquirer and jest, in the terminal run the command: npm i  
     - This will install all required package to run the application.  
       
@@ -37,12 +39,15 @@ In the terminal, run the command: node index
 From here, it's pretty straightforward. Follow the prompts until you've made your way through them all and are satisfied with your team member additions.  
 The HTML file will automatically generate once you've completed the final prompt, and it will populate in the outputPath folder and be titled "myTeam.html."
 
+
 ## Demo
 <a href="https://vimeo.com/806066026">Link to Full Demo</a>
 
 ![FullDemoGif](./Develop/assets/images/FullDemo.gif)
 
+
 ## Screenshots
+
 Terminal Demo:  
 ![Terminal Demo Screenshot](./Develop/assets/images/terminalScreenshot.png)  
   
